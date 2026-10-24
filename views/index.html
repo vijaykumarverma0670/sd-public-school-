@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. D. PUBLIC SCHOOL - BBC Road, Giridih</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #d69e2e;
+            --accent: #2b6cb0;
+            --bg-light: #f7fafc;
+            --text-dark: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Header */
+        .top-header {
+            background: #0f172a;
+            color: #fff;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-header-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-btn {
+            background: #319795;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .admin-btn {
+            background: var(--secondary);
+            color: #1a202c;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main Navigation */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5%;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box img {
+            height: 45px;
+        }
+
+        .logo-box h2 {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .logo-box small {
+            color: #718096;
+            font-size: 0.75rem;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-admission-btn {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: #fff;
+            padding: 60px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-badge {
+            background: rgba(214, 158, 46, 0.2);
+            color: var(--secondary);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(214, 158, 46, 0.4);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero-content p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: var(--secondary);
+            color: #1a202c;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background: #b7791f;
+            color: #fff;
+        }
+
+        .btn-green {
+            background: #319795;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-green:hover {
+            background: #285e61;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Notice Board Card */
+        .notice-card-box {
+            background: #ffffff;
+            color: #2d3748;
+            border-radius: 12px;
+            padding: 25px;
+            width: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+
+        .notice-header h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .live-badge {
+            background: #fed7d7;
+            color: #9b2c2c;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .notice-item {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .notice-item h4 {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .notice-item p {
+            font-size: 0.85rem;
+            color: #4a5568;
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 35px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .feature-box h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+
+        /* Leadership Desk Grid */
+        .desk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .desk-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .desk-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .desk-card h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .desk-card .role-title {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .desk-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            text-align: left;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        /* Result Portal Section */
+        .result-section {
+            background: #edf2f7;
+        }
+
+        .form-box {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            background: #38a169;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #2f855a;
+        }
+
+        /* Infrastructure Grid */
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .infra-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .infra-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .infra-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 220px;
+            position: relative;
+            background: #000;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(10, 25, 47, 0.85);
+            color: #fff;
+            width: 100%;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #cbd5e1;
+            padding: 50px 5% 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-header">
+        <div>📍 BBC Road, Giridih, Jharkhand | 📞 +91 9900000000</div>
+        <div class="top-header-right">
+            <a href="#results" class="top-btn">🎓 Student Result</a>
+            <a href="/admin.html" class="admin-btn">🔒 Admin Portal</a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <img src="https://img.icons8.com/color/96/school.png" alt="Logo">
+                <div>
+                    <h2>S. D. PUBLIC SCHOOL</h2>
+                    <small>BBC Road, Giridih | CBSE Curriculum Pattern</small>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#desks">Leadership Desks</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#admission" class="nav-admission-btn">Admission Inquiry</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <span class="hero-badge">✨ Admissions Open Session 2026-27</span>
+            <h1>Shaping Bright Futures & Empowering Young Minds</h1>
+            <p>S. D. Public School on BBC Road, Giridih offers modern educational infrastructure, experienced faculties,
+                computer labs, smart classrooms, sports training, and disciplined moral values.</p>
+            <div class="hero-buttons">
+                <a href="#admission" class="btn-gold">Apply For Admission</a>
+                <a href="#results" class="btn-green">View Results</a>
+                <a href="tel:+919900000000" class="btn-outline">📞 Call Office</a>
+            </div>
+        </div>
+
+        <!-- Notice Board Card -->
+        <div class="notice-card-box">
+            <div class="notice-header">
+                <h3>📢 Notice Board</h3>
+                <span class="live-badge">Live Alerts</span>
+            </div>
+            <div>
+                <div class="notice-item">
+                    <h4>NEW SESSION 2026-27</h4>
+                    <p>Admissions open for Nursery to Class 10th. Submit online form or visit school office.</p>
+                </div>
+                <div class="notice-item">
+                    <h4>ANNUAL EXAM RESULTS</h4>
+                    <p>Annual examination results are now available online. Enter Class & Roll No to check marksheet.
+                    </p>
+                </div>
+                <div class="notice-item">
+                    <h4>SPORTS COMPETITION</h4>
+                    <p>Inter-house sports day scheduled for next month. Interested students register now.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600" alt="School Classroom">
+        </div>
+        <div class="about-text">
+            <small style="color: var(--accent); font-weight: bold; text-transform: uppercase;">About S. D. Public
+                School</small>
+            <h2>Inspiring Educational Environment at Giridih</h2>
+            <p>S.D. Public School, BBC Road, Giridih is committed to fostering academic competence, creative thinking,
+                physical fitness, and moral integrity. Our students benefit from supportive teachers, smart classrooms,
+                and a safe learning campus.</p>
+
+            <div class="about-features">
+                <div class="feature-box">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: var(--secondary);">15+</span>
+                    <h4>Years of Trust & Excellence</h4>
+                </div>
+                <div class="feature-box">
+                    <span style="font-size: 1.5rem;">👨‍🏫</span>
+                    <h4>Dedicated Faculty</h4>
+                </div>
+                <div class="feature-box">
+                    <span style="font-size: 1.5rem;">💻</span>
+                    <h4>Smart Labs</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="desks" style="background: #f1f5f9;">
+        <div class="section-title">Director & Principal's Desk</div>
+        <div class="desk-grid">
+            <div class="desk-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Director">
+                <h3>Vijay prajapati</h3>
+                <div class="role-title">Director, S. D. Public School</div>
+                <p>"Our goal is to build strong character, academic excellence, and self-confidence in every child. We
+                    nurture curiosity and prepare students for future challenges."</p>
+            </div>
+            <div class="desk-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Principal">
+                <h3>Judistic mandal</h3>
+                <div class="role-title">Principal, S. D. Public School</div>
+                <p>"Education is the foundation for all achievements. We are committed to fostering creativity,
+                    discipline, and a loving learning environment for all our students."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Result Section -->
+    <section class="result-section" id="results">
+        <div class="section-title">Online Result & Marksheet Verification</div>
+        <p style="text-align: center; max-width: 600px; margin: -20px auto 30px; color: #4a5568;">Select Student Class
+            and enter Roll Number to view and print official annual examination results.</p>
+
+        <div class="form-box">
+            <form id="resultSearchForm">
+                <div class="form-group">
+                    <label>SELECT CLASS</label>
+                    <select id="searchClass" required>
+                        <option value="">-- Choose Class --</option>
+                        <option value="Class 10">Class 10</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 8">Class 8</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ROLL NUMBER</label>
+                    <input type="text" id="searchRoll" placeholder="e.g. 101" required>
+                </div>
+                <button type="submit" class="btn-submit">🔍 Find Result</button>
+            </form>
+        </div>
+        <div id="resultDisplay" style="max-width: 650px; margin: 30px auto; display: none;"></div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" style="background: #fff;">
+        <div class="section-title">World-Class Infrastructure</div>
+        <div class="infra-grid">
+            <div class="infra-card">
+                <h3>Computer Lab</h3>
+                <p>Modern computers with internet connectivity for coding & digital literacy.</p>
+            </div>
+            <div class="infra-card">
+                <h3>Science Labs</h3>
+                <p>Equipped apparatus for practical experiments in physics, chemistry, biology.</p>
+            </div>
+            <div class="infra-card">
+                <h3>Central Library</h3>
+                <p>Vast collection of textbooks, encyclopedias, journals, and competitive guides.</p>
+            </div>
+            <div class="infra-card">
+                <h3>School Transport</h3>
+                <p>Safe & secure bus pickup service covering all major routes across Giridih.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery" style="background: #f8fafc;">
+        <div class="section-title">School Photo Gallery</div>
+        <!-- id="galleryContainer" added to dynamically show uploaded photos -->
+        <div class="gallery-grid" id="galleryContainer">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500" alt="Students learning">
+                <div class="gallery-caption"><span>Classroom Learning</span><span>General</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500" alt="Classroom activity">
+                <div class="gallery-caption"><span>Activity Time</span><span>General</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Sports day">
+                <div class="gallery-caption"><span>Sports Day</span><span>Sports</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Inquiry Section -->
+    <section id="admission">
+        <div class="section-title">Online Admission Inquiry Form</div>
+        <p style="text-align: center; max-width: 600px; margin: -20px auto 30px; color: #4a5568;">Fill in student
+            details, our admission counter will connect with you.</p>
+
+        <div class="form-box">
+            <form id="inquiryForm">
+                <input type="hidden" name="access_key" value="64b5aabd-3dfe-4d26-bdb0-94380ac7bdd9">
+                <input type="hidden" name="from_name" value="S. D. Public School">
+                <input type="hidden" name="subject" value="New Admission Inquiry - S. D. Public School">
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>STUDENT'S FULL NAME *</label>
+                        <input type="text" name="studentName" id="inqStudent" placeholder="Enter student name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>PARENT / GUARDIAN NAME *</label>
+                        <input type="text" name="parentName" id="inqParent" placeholder="Enter parent name" required>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>MOBILE PHONE NUMBER *</label>
+                        <input type="tel" name="phone" id="inqPhone" placeholder="10 digit mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>SEEKING CLASS *</label>
+                        <select name="targetClass" id="inqClass" required>
+                            <option value="">Select Class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="Class 1">Class 1</option>
+                            <option value="Class 5">Class 5</option>
+                            <option value="Class 10">Class 10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>INQUIRY / MESSAGE</label>
+                    <textarea name="message" id="inqMsg" rows="3"
+                        placeholder="Ask any question regarding fees, transport, or syllabus..."></textarea>
+                </div>
+                <button type="submit" id="inqSubmitBtn" class="btn-submit">🚀 Submit Inquiry Details</button>
+                <p id="inqStatusMsg" style="text-align:center; margin-top:10px; font-weight:bold;"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript Handling Admission Form, Gallery Loading & Results -->
+    <script>
+        // 1. Admission Inquiry Form Submission (Web3Forms)
+        document.getElementById('inquiryForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('inqSubmitBtn');
+            const statusMsg = document.getElementById('inqStatusMsg');
+
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: json
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    statusMsg.style.color = "green";
+                    statusMsg.innerText = "✅ Inquiry sent successfully! We will contact you soon.";
+                    this.reset();
+                } else {
+                    statusMsg.style.color = "red";
+                    statusMsg.innerText = "❌ " + (result.message || "Something went wrong!");
+                }
+            } catch (error) {
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "❌ Network error. Please try again.";
+            } finally {
+                btn.innerText = "🚀 Submit Inquiry Details";
+                btn.disabled = false;
+            }
+        });
+
+        // 2. Automatically Load Gallery Photos from Server Backend
+        async function loadGallery() {
+            try {
+                const response = await fetch('/api/gallery');
+                const items = await response.json();
+                const container = document.getElementById('galleryContainer');
+
+                if (items && items.length > 0) {
+                    container.innerHTML = items.map(item => `
+                        <div class="gallery-item">
+                            <img src="${item.imageUrl}" alt="${item.title || 'School Gallery'}">
+                            <div class="gallery-caption">
+                                <span>${item.title || 'Gallery Image'}</span>
+                                <span style="color: var(--secondary); font-size: 0.75rem;">${item.category || 'General'}</span>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (err) {
+                console.error('Error fetching gallery:', err);
+            }
+        }
+
+        // 3. Online Result Search Handler
+        document.getElementById('resultSearchForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const className = document.getElementById('searchClass').value;
+            const rollNo = document.getElementById('searchRoll').value;
+            const displayDiv = document.getElementById('resultDisplay');
+
+            displayDiv.style.display = 'block';
+            displayDiv.innerHTML = '<p style="text-align:center; font-weight:bold; color:var(--primary);">Searching marksheet...</p>';
+
+            try {
+                const res = await fetch(`/api/results/search?className=${encodeURIComponent(className)}&rollNo=${encodeURIComponent(rollNo)}`);
+                const data = await res.json();
+
+                if (data.success && data.result) {
+                    const r = data.result;
+                    let subjectsHtml = '';
+                    if (r.subjects && r.subjects.length > 0) {
+                        subjectsHtml = `<table style="width:100%; border-collapse: collapse; margin-top:15px; font-size:0.9rem;" border="1">
+                            <tr style="background:#0a192f; color:#fff;"><th style="padding:8px;">Subject</th><th style="padding:8px;">Total</th><th style="padding:8px;">Obtained</th></tr>
+                            ${r.subjects.map(s => `<tr><td style="padding:6px;">${s.name}</td><td style="padding:6px; text-align:center;">${s.total || 100}</td><td style="padding:6px; text-align:center;">${s.obtained}</td></tr>`).join('')}
+                        </table>`;
+                    }
+
+                    displayDiv.innerHTML = `
+                        <div style="background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1); border-top:4px solid #38a169;">
+                            <h3 style="color:#0a192f; text-align:center; margin-bottom:15px;">🎓 Official Annual Marksheet</h3>
+                            <p><strong>Student Name:</strong> ${r.studentName}</p>
+                            <p><strong>Class:</strong> ${r.className} &nbsp;|&nbsp; <strong>Section:</strong> ${r.section || 'A'}</p>
+                            <p><strong>Roll No:</strong> ${r.rollNo} &nbsp;|&nbsp; <strong>Father's Name:</strong> ${r.fatherName || '-'}</p>
+                            ${subjectsHtml}
+                            <hr style="margin:15px 0; border:0; border-top:1px solid #edf2f7;">
+                            <p><strong>Total Marks Obtained:</strong> ${r.totalMarks}</p>
+                            <p><strong>Percentage:</strong> ${r.percentage}%</p>
+                            <p><strong>Grade:</strong> <span style="font-weight:bold; color:#d69e2e;">${r.grade}</span> &nbsp;|&nbsp; <strong>Status:</strong> <span style="color:${r.status === 'PASS' ? 'green' : 'red'}; font-weight:bold;">${r.status}</span></p>
+                            <button onclick="window.print()" style="margin-top:20px; background:#0a192f; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; width:100%; font-weight:bold;">🖨️ Print Marksheet</button>
+                        </div>
+                    `;
+                } else {
+                    displayDiv.innerHTML = '<div style="background:#fff; padding:20px; border-radius:8px; text-align:center; color:red; font-weight:bold;">❌ Result not found. Please verify Class and Roll Number.</div>';
+                }
+            } catch (err) {
+                displayDiv.innerHTML = '<div style="background:#fff; padding:20px; border-radius:8px; text-align:center; color:red; font-weight:bold;">❌ Error connecting to server. Please try again.</div>';
+            }
+        });
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', loadGallery);
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>S. D. PUBLIC SCHOOL</h3>
+                <p>Quality education, physical development, and value-oriented teaching at BBC Road, Giridih. Preparing
+                    future leaders.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>📍 BBC Road, Giridih, Jharkhand - 815301</p>
+                <p>📞 +91 99000 00000</p>
+                <p>✉️ info@sdpublicschool.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>School Map Location</h3>
+                <iframe
+                    src="https://maps.google.com/maps?q=S.D.+Public+School,+BBC+Road,+Giridih&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="200" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 S. D. PUBLIC SCHOOL, BBC Road. All Rights Reserved.</div>
+            <div><a href="/admin.html">🔒 Secured Admin Portal</a></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
